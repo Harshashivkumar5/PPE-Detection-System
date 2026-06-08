@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# ML Models
+*.pkl
+*.joblib
+*.h5
+
+# YOLO Models
+*.pt
+*.pth
+
+# Training Outputs
+runs/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

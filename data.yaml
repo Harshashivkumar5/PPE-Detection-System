@@ -1,0 +1,28 @@
+# PPE Detection Dataset — FIXED (nc=5, correct class remapping)
+# 
+# IMPORTANT: The 'path' below is relative to THIS yaml file's location.
+# Works cross-platform on Windows, Mac, Linux.
+#
+# If you get "images not found" errors, run:  python fix_dataset.py
+
+path: ./dataset        # dataset root (relative to this file)
+train: images/train    # 1132 images
+val:   images/val      #  143 images
+test:  images/test     #  141 images
+
+nc: 5
+names:
+  0: jacket       # Safety vest / hi-vis jacket  ✅ PRESENT
+  1: hat          # Hardhat / safety helmet       ✅ PRESENT
+  2: no-jacket    # Person NOT wearing jacket     ❌ ABSENT
+  3: no-hat       # Person NOT wearing hardhat    ❌ ABSENT
+  4: person       # Person (generic detection)
+
+# Source: Roboflow Safety PPE (safety-ppe-yg8ru-mjtij) — remapped
+# Original 11 classes → 5 meaningful PPE classes:
+#   0 (Hardhat)        → 1 (hat)
+#   2 (NO-Hardhat)     → 3 (no-hat)
+#   4 (NO-Safety Vest) → 2 (no-jacket)
+#   5 (Person)         → 4 (person)
+#   6 (Safety Vest)    → 0 (jacket)
+#   1,3,7,8,9,10       → DROPPED
